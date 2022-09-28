@@ -30,12 +30,14 @@ class ClapTrap
 	void swap(ClapTrap &first, ClapTrap &second); //normally "friend" swap, but not allowed due to 42 norm
 
 	// Getters
+	std::string get_type() const;
 	std::string get_name() const;
 	int get_hitpoints() const;
 	int get_energypoints() const;
 	int get_attackdamage() const;
 
 	// Setters
+	void set_type(std::string const name);
 	void set_name(std::string const name);
 	void set_hitpoints(int const hitpoints);
 	void set_energypoints(int const energypoints);
@@ -48,6 +50,7 @@ class ClapTrap
 	void beRepaired(unsigned int amount);
 
  protected:
+	std::string type_;
 	std::string name_;
 	int max_hitpoints_ = 10;
 	int hitpoints_;
