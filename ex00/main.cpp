@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:01:09 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/28 11:25:01 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:33:19 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ int main (void) {
 	charlie.set_name("Charlie");
 	charlie.attack(alfons);
 	
-	std::cout << YELLOW << std::endl << "--- Setting Energy to 0 ---" << std::endl << std::endl;
-	charlie.set_energypoints(0);
+	std::cout << YELLOW << std::endl << "--- Setting Energy to 1 ---" << std::endl << std::endl;
+	charlie.set_energypoints(1);
+	charlie.attack(alfons);
 	charlie.attack(alfons);
 	alfons.attack(charlie);
 	charlie.beRepaired(3);
