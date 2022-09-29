@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:31:41 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 11:00:25 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:19:31 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap() {
 
 DiamondTrap::DiamondTrap(std::string name) {
   std::cout << "Name Constructor called of DiamondTrap " << std::endl;
-	ClapTrap::name_ = name + "_clap_name";
+  ClapTrap::name_ = name + "_clap_name";
   this->name_ = name;
   this->type_ = "DiamondTrap";
   this->attackdamage_ = 30;
@@ -65,6 +65,13 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap other) {
 }
 
 void DiamondTrap::whoAmI() {
-  std::cout << "DiamondTrap's name is " << this->name_
-            << " and it's ClapTrap name is " << ClapTrap::name_ << std::endl;
+  if (this->energypoints_ > 0) {
+    this->energypoints_--;
+    std::cout << "Hello, my name is " << this->name_
+              << " and my ClapTrap name is " << ClapTrap::name_ << std::endl;
+  } else {
+    std::cout << this->type_ << " " << this->name_
+              << " doesn't have enough energy to tell you who it is!"
+              << std::endl;
+  }
 }
