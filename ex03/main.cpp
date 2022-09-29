@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:01:09 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:55:36 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:24:10 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main (void) {
 	oliver.status();
 	penny.status();
 	
-	std::cout << RED << std::endl << "---  ---" << std::endl << std::endl;
+	std::cout << RED << std::endl << "--- Special abilities ---" << std::endl << std::endl;
 	mario.whoAmI();
 	mario.GuardGate();
 	mario.highFivesGuys();
@@ -35,8 +35,22 @@ int main (void) {
 	oliver.GuardGate();
 	penny.attack("the air, because she can't do anything");
 	
-	std::cout << BLUE <<std::endl << "---  ---" << std::endl << std::endl;
+	std::cout << BLUE <<std::endl << "--- Attacks ---" << std::endl << std::endl;
+	mario.attack(nelly);
+	nelly.attack(oliver);
+	oliver.attack(penny);
+	penny.attack(mario);
 
+	std::cout << YELLOW <<std::endl << "--- Copy assignment ---" << std::endl << std::endl;
+
+	nelly = mario;
+	oliver = mario;
+	penny = mario;
+	
+	mario.status();
+	nelly.status();
+	oliver.status();
+	penny.status();
 	
 	std::cout << DEFAULT << std::endl;
 }
