@@ -55,7 +55,7 @@ class ClapTrap
  protected:
 	std::string type_;
 	std::string name_;
-	int max_hitpoints_ = 10;
+	int max_hitpoints_;
 	int hitpoints_;
 	int energypoints_;
 	unsigned int	attackdamage_;

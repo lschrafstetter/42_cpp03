@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:01:09 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 11:24:10 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 13:05:58 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ int main (void) {
 	nelly.status();
 	oliver.status();
 	penny.status();
-	
+
 	std::cout << DEFAULT << std::endl;
 }

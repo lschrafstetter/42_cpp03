@@ -5,6 +5,7 @@ ClapTrap::ClapTrap() {
   std::cout << "Default Constructor called of ClapTrap" << std::endl;
   this->attackdamage_ = 0;
   this->hitpoints_ = 10;
+  this->max_hitpoints_ = 10;
   this->energypoints_ = 10;
 }
 
@@ -13,6 +14,7 @@ ClapTrap::ClapTrap(std::string name) {
   this->name_ = name;
   this->attackdamage_ = 0;
   this->hitpoints_ = 10;
+  this->max_hitpoints_ = 10;
   this->energypoints_ = 10;
 }
 
@@ -20,6 +22,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
   std::cout << "Copy Constructor called of ClapTrap" << std::endl;
   this->name_ = copy.name_;
   this->hitpoints_ = copy.hitpoints_;
+  this->max_hitpoints_ = copy.max_hitpoints_;
   this->energypoints_ = copy.energypoints_;
   this->attackdamage_ = copy.attackdamage_;
 }
@@ -33,6 +36,7 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::swap(ClapTrap &first, ClapTrap &second) {
   std::swap(first.name_, second.name_);
   std::swap(first.hitpoints_, second.hitpoints_);
+	std::swap(first.max_hitpoints_, second.max_hitpoints_);
   std::swap(first.energypoints_, second.energypoints_);
   std::swap(first.attackdamage_, second.attackdamage_);
 }

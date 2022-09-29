@@ -6,6 +6,7 @@ ClapTrap::ClapTrap() {
   this->type_ = "ClapTrap";
   this->attackdamage_ = 0;
   this->hitpoints_ = 10;
+  this->max_hitpoints_ = 10;
   this->energypoints_ = 10;
 }
 
@@ -15,6 +16,7 @@ ClapTrap::ClapTrap(std::string name) {
   this->type_ = "ClapTrap";
   this->attackdamage_ = 0;
   this->hitpoints_ = 10;
+  this->max_hitpoints_ = 10;
   this->energypoints_ = 10;
 }
 
@@ -38,6 +40,7 @@ void ClapTrap::swap(ClapTrap &first, ClapTrap &second) {
   std::swap(first.type_, second.type_);
   std::swap(first.name_, second.name_);
   std::swap(first.hitpoints_, second.hitpoints_);
+  std::swap(first.max_hitpoints_, second.max_hitpoints_);
   std::swap(first.energypoints_, second.energypoints_);
   std::swap(first.attackdamage_, second.attackdamage_);
 }
