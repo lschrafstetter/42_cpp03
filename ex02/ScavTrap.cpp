@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:31:41 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:12:18 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:14:57 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void ScavTrap::attack(ClapTrap &target) {
 
 void ScavTrap::GuardGate() {
   if (this->energypoints_ > 0) {
+		this->energypoints_--;
     std::cout << this->type_ << " " << this->name_
               << " is now in Gate keeper mode!" << std::endl;
   } else {

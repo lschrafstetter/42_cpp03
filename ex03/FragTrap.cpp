@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:31:41 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:33:14 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:15:23 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void FragTrap::attack(ClapTrap &target) {
 
 void FragTrap::highFivesGuys() {
   if (this->energypoints_ > 0) {
+		this->energypoints_--;
     std::cout << this->type_ << " " << this->name_
               << " is enthusiastically offering a high five!" << std::endl;
   } else {
