@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:31:41 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:12:18 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:33:19 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap other) {
 
 // Functions
 void ScavTrap::attack(const std::string &target) {
+	std::cout << "Using ScavTrap attack" << std::endl;
   if (energypoints_ == 0) {
     std::cout << this->type_ << " " << this->name_
               << " doesn't have enough energy to attack!" << std::endl;
@@ -84,6 +85,7 @@ void ScavTrap::attack(const std::string &target) {
 }
 
 void ScavTrap::attack(ClapTrap &target) {
+	std::cout << "Using ScavTrap attack" << std::endl;
   if (energypoints_ == 0) {
     std::cout << this->type_ << " " << this->name_
               << " doesn't have enough energy to attack!" << std::endl;

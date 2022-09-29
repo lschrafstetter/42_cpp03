@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:31:45 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:23:56 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:22:46 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : public virtual ClapTrap {
  public:
   // Constructors
   ScavTrap();

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:31:45 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:23:56 by lschrafs         ###   ########.fr       */
+/*   Created: 2022/09/29 08:36:37 by lschrafs          #+#    #+#             */
+/*   Updated: 2022/09/29 11:04:17 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 #define DEFAULT "\033[39m"
 #define BLACK "\033[30m"
@@ -27,25 +29,28 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class ScavTrap : public ClapTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
  public:
   // Constructors
-  ScavTrap();
-  ScavTrap(std::string name);
-  ScavTrap(const ScavTrap &copy);
+  DiamondTrap();
+  DiamondTrap(std::string name);
+  DiamondTrap(const DiamondTrap &copy);
 
   // Destructor
-  ~ScavTrap();
+  ~DiamondTrap();
 
   // Operators
-  void swap(ScavTrap &first, ScavTrap &second);  // normally "friend" swap, but
-                                                 // not allowed due to 42 norm
-  ScavTrap &operator=(ScavTrap other);
+  void swap(DiamondTrap &first,
+            DiamondTrap &second);  // normally "friend" swap, but
+                                   // not allowed due to 42 norm
+  DiamondTrap &operator=(DiamondTrap other);
 
   // Functions
-  void attack(const std::string &target);
-  void attack(ClapTrap &target);
-  void GuardGate();
+	using ScavTrap::attack;
+  void whoAmI();
+ 
+ private:
+	std::string name_;
 };
 
 #endif

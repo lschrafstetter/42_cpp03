@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:31:45 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/29 10:23:56 by lschrafs         ###   ########.fr       */
+/*   Created: 2022/09/29 08:36:37 by lschrafs          #+#    #+#             */
+/*   Updated: 2022/09/29 10:22:50 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
@@ -27,25 +27,25 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class ScavTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
  public:
   // Constructors
-  ScavTrap();
-  ScavTrap(std::string name);
-  ScavTrap(const ScavTrap &copy);
+  FragTrap();
+  FragTrap(std::string name);
+  FragTrap(const FragTrap &copy);
 
   // Destructor
-  ~ScavTrap();
+  ~FragTrap();
 
   // Operators
-  void swap(ScavTrap &first, ScavTrap &second);  // normally "friend" swap, but
+  void swap(FragTrap &first, FragTrap &second);  // normally "friend" swap, but
                                                  // not allowed due to 42 norm
-  ScavTrap &operator=(ScavTrap other);
+  FragTrap &operator=(FragTrap other);
 
   // Functions
   void attack(const std::string &target);
   void attack(ClapTrap &target);
-  void GuardGate();
+  void highFivesGuys(void);
 };
 
 #endif

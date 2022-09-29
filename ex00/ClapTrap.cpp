@@ -9,7 +9,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(std::string name) {
-  std::cout << "Name Constructor called of ClapTrap " << name << std::endl;
+  std::cout << "Name Constructor called of ClapTrap " << std::endl;
   this->name_ = name;
   this->attackdamage_ = 0;
   this->hitpoints_ = 10;
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 
 // Destructor
 ClapTrap::~ClapTrap() {
-  std::cout << "Destructor called of ClapTrap " << this->name_  << std::endl;
+  std::cout << "Destructor called of ClapTrap " << this->name_ << std::endl;
 }
 
 // Operators
@@ -96,7 +96,7 @@ void ClapTrap::attack(ClapTrap &target) {
     std::cout << "ClapTrap " << this->name_ << " attacks " << target.get_name()
               << ", causing " << this->attackdamage_ << " points of damage!"
               << std::endl;
-		target.takeDamage(this->attackdamage_);
+    target.takeDamage(this->attackdamage_);
   } else {
     std::cout << "ClapTrap " << this->name_ << " is dead and can't attack!"
               << std::endl;
@@ -114,8 +114,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
   if (this->hitpoints_ <= 0) {
     this->hitpoints_ = 0;
     std::cout << " and dies!" << std::endl;
+    return;
   }
-  std::cout << " and now has " << this->hitpoints_ << " hitpoints!" << std::endl;
+  std::cout << " and now has " << this->hitpoints_ << " hitpoints!"
+            << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -124,8 +126,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
               << " doesn't have enough energy to repair itself!" << std::endl;
     return;
   }
-  this->energypoints_--;
   if (this->hitpoints_ > 0) {
+		this->energypoints_--;
     if (this->hitpoints_ + amount > this->max_hitpoints_) {
       this->hitpoints_ = this->max_hitpoints_;
       std::cout << "ClapTrap " << this->name_
@@ -142,4 +144,10 @@ void ClapTrap::beRepaired(unsigned int amount) {
     std::cout << "ClapTrap " << this->name_ << " is dead and can't heal itself!"
               << std::endl;
   }
+}
+
+void ClapTrap::status(void) const {
+  std::cout << "Name: " << this->name_ << " HP: " << this->hitpoints_
+            << " EP: " << this->energypoints_ << " ATT: " << this->attackdamage_
+            << std::endl;
 }

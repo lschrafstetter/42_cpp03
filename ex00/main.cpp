@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:01:09 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/09/28 11:33:19 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:38:24 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ int main (void) {
 	ClapTrap berta = ClapTrap();
 	berta.set_name("Berta");
 
+	alfons.status();
 	alfons.attack("something");
 	alfons.set_attackdamage(4);
 	
 	std::cout << GREEN << std::endl << "--- Alfons attacks Berta, Berta heals to full ---" << std::endl << std::endl;
 	alfons.attack(berta);
+	berta.status();
 	berta.beRepaired(3);
 	berta.beRepaired(3);
 	
@@ -33,11 +35,14 @@ int main (void) {
 	
 	std::cout << BLUE <<std::endl << "--- Copying Alfons into new ClapTrap Charlie ---" << std::endl << std::endl;
 	ClapTrap charlie = alfons;
+	charlie.status();
 	charlie.set_name("Charlie");
+	charlie.status();
 	charlie.attack(alfons);
 	
 	std::cout << YELLOW << std::endl << "--- Setting Energy to 1 ---" << std::endl << std::endl;
 	charlie.set_energypoints(1);
+	charlie.status();
 	charlie.attack(alfons);
 	charlie.attack(alfons);
 	alfons.attack(charlie);
