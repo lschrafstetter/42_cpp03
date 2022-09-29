@@ -48,7 +48,7 @@ class ClapTrap
 	void beRepaired(unsigned int amount);
 	void status(void) const;
 
- protected:
+ private:
 	std::string name_;
 	int max_hitpoints_;
 	int hitpoints_;
